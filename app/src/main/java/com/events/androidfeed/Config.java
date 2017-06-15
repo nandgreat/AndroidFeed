@@ -5,7 +5,7 @@ package com.events.androidfeed;
  */
 public class Config {
     //Data URL
-    public static final String DATA_URL = "http://192.168.0.107/androidfeed/feed.php?page=";
+    public static final String DATA_URL = "http://wwwemailtrialcom.000webhostapp.com/androidfeed/feed.php?page=";
 
     //JSON TAGS
     public static final String TAG_IMAGE_URL = "image";

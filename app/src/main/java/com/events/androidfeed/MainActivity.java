@@ -71,11 +71,11 @@ public class MainActivity extends AppCompatActivity implements RecyclerView.OnSc
     //This method would return a JsonArrayRequest that will be added to the request queue
     private JsonArrayRequest getDataFromServer(int requestCount) {
         //Initializing ProgressBar
-        //final ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar1);
+        final ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar1);
 
         //Displaying Progressbar
-       // progressBar.setVisibility(View.VISIBLE);
-        //setProgressBarIndeterminateVisibility(true);
+        progressBar.setVisibility(View.VISIBLE);
+       setProgressBarIndeterminateVisibility(true);
 
         //JsonArrayRequest of volley
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Config.DATA_URL + String.valueOf(requestCount),
@@ -84,12 +84,11 @@ public class MainActivity extends AppCompatActivity implements RecyclerView.OnSc
                     public void onResponse(JSONArray response) {
                         //Calling method parseData to parse the json response
                         parseData(response);
-                       // Toast.makeText(MainActivity.this, "Just testing", Toast.LENGTH_SHORT).show();
 
                         Log.d(Config.TAG_IMAGE_URL, response.toString());
 
                         //Hiding the progressbar
-                        //progressBar.setVisibility(View.GONE);
+                        progressBar.setVisibility(View.GONE);
                     }
                 },
                 new Response.ErrorListener() {
